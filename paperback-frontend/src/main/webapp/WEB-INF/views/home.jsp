@@ -16,17 +16,16 @@
 					</div>
 				</div>
 			</div>
+			
+			
 			<h3 class="my-4">catagories</h3>
 			<div style="height: 100px; width: 200px; background: ">
                <div id="c1" style="overflow: auto; max-height: 100px; background:">
 			<div class="list-group">
+			<c:forEach items="${catagories}" var="catagory">
 			
-				<a href="#" class="list-group-item">java SE</a> 
-				<a href="#" class="list-group-item">Java EE</a> 
-				<a href="#" class="list-group-item">Spring</a>
-				<a href="#" class="list-group-item">Hibernet</a>
-				<a href="#" class="list-group-item">Hadoop</a>
-				<a href="#" class="list-group-item">view all</a>
+			<a href="${contextRoot}/${catagory.id}" class="list-group-item">${catagory.name}</a> 
+			</c:forEach>
 				
 					
 			</div>
@@ -93,9 +92,9 @@
 					class="sr-only">Next</span>
 				</a>
 			</div>
-
+            <font face="Sonsie One"><h3>popular books</h3></font>
 			<div class="row">
-
+                  
 				<div class="col-lg-4 col-md-6 mb-4">
 					<div class="card h-100">
 						<a href="#"><img class="card-img-top"

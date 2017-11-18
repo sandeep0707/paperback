@@ -13,6 +13,14 @@
   <spring.version>4.3.6.RELEASE</spring.version>
   </properties>
   <dependencies>
+  
+  <!-- linking backend -->
+  <dependency>
+   <groupId>com.menatwork</groupId>
+  <artifactId>paperback-backend</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  </dependency>
+  
   <!-- https://mvnrepository.com/artifact/javax/javaee-api -->
 <dependency>
     <groupId>javax</groupId>

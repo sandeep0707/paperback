@@ -5,6 +5,9 @@
          version="3.1">
 
   <display-name>Archetype Created Web Application</display-name>
+  
+  
+  
   <!-- configure front controller -->
   <servlet>
   <servlet-name>dispatcher</servlet-name>

@@ -36,6 +36,9 @@
     <!-- Page Content -->
    <c:if test="${userClickHome == true }"> 
     <%@ include file="home.jsp" %>
+   </c:if>
+   <c:if test="${userClickAbout == true }"> 
+    <%@ include file="about.jsp" %>
   
    </c:if>
    <c:if test="${userClickAbout == true }"> 
@@ -46,6 +49,10 @@
     <%@ include file="contact.jsp" %>
   
    </c:if>
+  <c:if test="${userClickCatagoryBooks == true }"> 
+    <%@ include file="catagory.jsp" %>
+  
+   </c:if>
   
   
     <!-- Footer -->
@@ -54,7 +61,6 @@
   
    </c:if>
   
-
     <!-- Bootstrap core JavaScript -->
     <script src="${js}/jquery.min.js"></script>
     <script src="${js}/bootstrap.bundle.min.js"></script>

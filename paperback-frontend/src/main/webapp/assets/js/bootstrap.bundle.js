@@ -170,7 +170,7 @@ function _createClass(Constructor, protoProps, staticProps) {
 var createClass = _createClass;
 
 function _inheritsLoose(subClass, superClass) {
-  subClass.prototype = Object.create(superClass.prototype);
+  subClass.prototype Cannot create PoolableConnectionFactory (isValid() returned false)= Object.create(superClass.prototype);
   subClass.prototype.constructor = subClass;
   subClass.__proto__ = superClass;
 }
