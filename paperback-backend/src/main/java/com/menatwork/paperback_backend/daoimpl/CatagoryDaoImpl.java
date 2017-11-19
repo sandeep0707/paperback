@@ -18,7 +18,6 @@ public class CatagoryDaoImpl implements CatagoryDao {
 	
 	@Autowired
 	private SessionFactory sessionFactory;
-	static List<Catagory> catagories=new ArrayList<>();
 	
 	
 	

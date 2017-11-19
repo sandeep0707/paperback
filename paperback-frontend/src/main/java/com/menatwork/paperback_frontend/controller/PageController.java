@@ -7,18 +7,24 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.menatwork.paperback_backend.dao.CatagoryDao;
+import com.menatwork.paperback_backend.dao.ProductDao;
 import com.menatwork.paperback_backend.dto.Catagory;
 
 @Controller
 public class PageController {
 	@Autowired
 	private CatagoryDao catagoryDao;
+	
+	@Autowired
+	private ProductDao productDao;
 
 	@RequestMapping(value={"/","/home","/index"})
 	public ModelAndView index(){
 		ModelAndView mv=new ModelAndView("page");
 		mv.addObject("title", "home");
+		mv.addObject("products",productDao.getLatestActiveBookList(6));
 		mv.addObject("catagories", catagoryDao.catagoryList());
+		
 		mv.addObject("userClickHome", true);
 		return mv;
 		
