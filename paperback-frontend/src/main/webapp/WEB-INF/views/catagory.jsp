@@ -4,10 +4,11 @@
  <!-- Page Content -->
  
     <div class="container">
->              
+
+            
   <ol class="breadcrumb">
-    <li><a href="${contextRoot}/home">Home/</a></li>
-    <li><a href="${contextRoot}/${catagory.id}">${catagory.name}/</a></li>
+    <li><a href="${contextRoot}/home">Home</a></li>
+    <li><a href="${contextRoot}/${catagory.id}/catagory">${catagory.name}</a></li>
     <li class="active">Books</li>  
           
   </ol>
@@ -77,23 +78,27 @@
       <!-- row -->
        <div class="row">
            
+				 <c:forEach items="${products}" var="product">
 				<div class="col-lg-3 col-md-6 mb-4">
 					<div class="card h-100">
-						<a href="#"><img class="card-img-top"
+						<a href="${contextRoot}/${product.code}/${product.id}/view"><img class="card-img-top"
 							src="http://images.springer.com/sgw/books/medium/978-1-4842-0269-2.jpg" alt="">
 						<div class="card-body">
 							<h4 class="card-title">
-								</a>
+								${product.name} </a>
 							</h4>
-							<h5>&#x20b9; </h5>
-							<p class="card-text"></p>
-							<strong>author: <a href="#" ></a></strong>
+							<h5>&#x20b9; ${product.unitPrice}</h5>
+							<p class="card-text">${product.description}</p>
+							<strong>author: <a href="#" >${product.author}</a></strong>
 						</div>
 						<div class="card-footer">
 							<div class="text-muted">&#9733; &#9733; &#9733; &#9733;
 								&#9734;</div> &#128065;
 						</div>
 					</div>
+				</div>
+			
+			</c:forEach>
 				</div>
 			
 			

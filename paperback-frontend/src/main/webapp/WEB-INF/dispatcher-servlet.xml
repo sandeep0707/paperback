@@ -11,15 +11,18 @@
     http://www.springframework.org/schema/mvc/spring-mvc.xsd
     ">  
     
-   <context:component-scan base-package="com.menatwork.paperback_frontend.controller"/>
+   <context:component-scan base-package="com.menatwork.paperback_frontend"/>
       <context:component-scan base-package="com.menatwork.paperback_backend"/>
    
-   
-  <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver" >
-  <property name="prefix" value="/WEB-INF/views/" />
-    <property name="suffix" value=".jsp" />
-  </bean>
-  
-  <mvc:annotation-driven/>
-  <mvc:resources location="/assets/" mapping="/resources/**" />
+  <bean id="viewResolver"
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		
+		<property name="prefix" value="/WEB-INF/views/" />
+		<property name="suffix" value=".jsp" />
+		
+	</bean>
+  <mvc:annotation-driven />
+	
+	<mvc:resources location="/assets/" mapping="/resources/**" />
+	
    </beans>

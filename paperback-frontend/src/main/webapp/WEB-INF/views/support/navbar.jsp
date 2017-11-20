@@ -1,26 +1,42 @@
- <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-      <div class="container">
-        <a class="navbar-brand" href="${contextRoot}/home" > <strong><font face="Sonsie One"><h2>paperback</h2></font></strong></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="${contextRoot}/home">Home
-                <span class="sr-only">(current)</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="${contextRoot}/about">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">login</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="${contextRoot}/contact">Contact Us</a>
-            </li>
-          </ul>
+	<script>
+		window.userRole = '${userModel.role}';
+	</script>
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button> 
+                <a class="navbar-brand" href="${contextRoot}/home">paperback</a><img  alt="" src="${images}/logo.jpg" width="37px">
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li id="about">
+                        <a href="${contextRoot}/about">About</a>
+                    </li>
+
+                    <li id="contact">
+                        <a href="${contextRoot}/contact">Contact</a>
+                    </li>
+                    
+                    <li id="listProducts">
+                        <a href="${contextRoot}/login">login</a>
+                    </li>
+					
+                </ul>
+			    
+			    <ul class="nav navbar-nav navbar-right">
+			    
+			    </ul>                
+                
+            </div>
+            <!-- /.navbar-collapse -->
         </div>
-      </div>
+        <!-- /.container -->
     </nav>
+
