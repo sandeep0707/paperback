@@ -93,7 +93,7 @@
 						</div>
 						<div class="card-footer">
 							<div class="text-muted">&#9733; &#9733; &#9733; &#9733;
-								&#9734;</div> &#128065;
+								&#9734;</div> &#128065; ${product.views}
 						</div>
 					</div>
 				</div>

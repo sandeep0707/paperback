@@ -30,6 +30,16 @@ public class Product {
 	@Column(name = "publisher_id")
 	private int publisherId;
 	private int purchases;
+	
+	/**
+	 * to string method
+	 */
+	@Override
+	public String toString() {
+		return "Product [name=" + name + ", code=" + code + ", author=" + author + ", description=" + description
+				+ ", unitPrice=" + unitPrice + ", active=" + active + ", catagoryId=" + catagoryId + ", publisherId="
+				+ publisherId + ", purchases=" + purchases + ", views=" + views + "]";
+	}
 	private int views;
 	public int getId() {
 		return id;

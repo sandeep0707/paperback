@@ -34,7 +34,8 @@
 						<h3 class="my-4">Publish a book</h3><br>
 						<span
 							class="input-group-btn">
-							<button class="btn btn-secondary" type="button">commit and push</button>
+						<a href="${contextRoot}/push/book">	<button class="btn btn-secondary" type="button">commit and push</button>
+						</a>
 						</span>
 			
 		</div>
@@ -113,7 +114,7 @@
 						</div>
 						<div class="card-footer">
 							<div class="text-muted">&#9733; &#9733; &#9733; &#9733;
-								&#9734;</div> &#128065;
+								&#9734;</div> &#128065;  ${product.views}
 						</div>
 					</div>
 				</div>

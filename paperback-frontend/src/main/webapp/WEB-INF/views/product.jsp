@@ -35,7 +35,7 @@
 								<strong>views<br>
 								&#128065; ${product.views}<br></strong>
                        <strong>downloads<br>
-								 &#x21E9; ${product.views}</strong>
+								 &#x21E9; 0</strong>
                        
         
           </div>

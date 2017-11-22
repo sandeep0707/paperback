@@ -30,21 +30,21 @@ public class GlobalDefaultExceptionHandler {
 	
 	
 	
-	@ExceptionHandler(Exception.class)
+	//@ExceptionHandler(Exception.class)
 	public ModelAndView handlerException(Exception ex) {
 		
 		ModelAndView mv = new ModelAndView("error");
 		
-		mv.addObject("errorTitle", "Contact Your Administrator!!");
+		mv.addObject("errorTitle", "Contact Administrator!!");
 		
 		
-		/* only for debugging your application*/
+		/* only for debugging application*/
 		StringWriter sw = new StringWriter();
 		PrintWriter pw = new PrintWriter(sw);
 		
 		ex.printStackTrace(pw);
 						
-		mv.addObject("errorDescription", sw.toString());
+		mv.addObject("errorDescription", "ops! somthing went wrong");
 		
 		mv.addObject("title", "Error");
 		

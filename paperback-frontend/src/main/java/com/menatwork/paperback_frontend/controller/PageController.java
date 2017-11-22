@@ -84,6 +84,11 @@ public class PageController {
 		//get the books by catagory
 		Product product=null;
 		        product=productDao.getBook(id);
+		       int views= product.getViews();
+		       product.setViews(views+1);
+		       productDao.updateBook(product);
+		       
+		       product=productDao.getBook(id);
 		mv.addObject("product", product);
 		mv.addObject("catagories", catagoryDao.catagoryList());
 		mv.addObject("title", product.getName());

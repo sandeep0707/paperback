@@ -21,7 +21,7 @@
 <meta name="_csrf" content="${_csrf.token}">
 <meta name="_csrf_header" content="${_csrf.headerName}">
 
-<title>paperback/${title}</title>
+<title>paperback-${title}</title>
 
 <script>
 	window.menu = '${title}';
@@ -81,7 +81,10 @@
 				<%@include file="catagory.jsp"%>
 			</c:if>
 			
-		
+		<c:if test="${userClickOnPushABook == true }">
+				<%@include file="pushabook.jsp"%>
+			</c:if>
+			
 			
 			
 			

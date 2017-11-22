@@ -19,7 +19,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>Online Shopping - ${title}</title>
+<title>paperback/${title}</title>
 
 <!-- Bootstrap Core CSS -->
 <link href="${css}/bootstrap.min.css" rel="stylesheet">
@@ -61,79 +61,37 @@
 
 		<!-- Page Content -->
 
-		<div class="content">
-			
-   <div class="container">
-    
-   	<c:if test="${not empty message}">
-		<div class="row">
-			<div class="col-xs-12 col-md-offset-2 col-md-8">
-				<div class="alert alert-danger fade in">${message}</div>
-			</div>
-		</div>
-	</c:if>
-         
-   	<c:if test="${not empty logout}">
-		<div class="row">
-			<div class="col-xs-12 col-md-offset-2 col-md-8">
-				<div class="alert alert-success">${logout}</div>
-			</div>
-		</div>
-	</c:if>
-       
-    <div class="row">
-     
-     <div class="col-md-offset-3 col-md-6">
-      
-      <div class="panel panel-primary">
-       
-       <div class="panel-heading">
-        <h4>Login</h4>
-       </div>
-       
-       <div class="panel-body">
-        <form action="${contextRoot}/login" method="POST" class="form-horizontal"
-         id="loginForm"
-        >
-         <div class="form-group">
-          <label for="username" class="col-md-4 control-label">Email: </label>
-          <div class="col-md-8">
-           <input type="text" name="username" id="username" class="form-control"/>
-          </div>
-         </div>
-         <div class="form-group">
-          <label for="password" class="col-md-4 control-label">Password: </label>
-          <div class="col-md-8">
-           <input type="password" name="password" id="password" class="form-control"/>
-          </div>
-         </div>
-         <div class="form-group">
-          <div class="col-md-offset-4 col-md-8">
-           <input type="hidden"  name="${_csrf.parameterName}"   value="${_csrf.token}"/>
-           <input type="submit" value="Login" class="btn btn-primary"/>
-          </div>
-         </div>
-        </form>
-       
-       </div>
-       <div class="panel-footer">
-       	<div class="text-right">
-       		New User - <a href="${contextRoot}/register">Register Here</a>
-       	</div>
-       </div>
-      
-      </div> 
-    
-     </div>
-     
-    </div>    
-   
-   </div>
-
-			
-		</div>
-
-
+		
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4">
+                <div class="login-panel panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Please Sign In</h3>
+                    </div>
+                    <div class="panel-body">
+                        <form role="form">
+                            <fieldset>
+                                <div class="form-group">
+                                    <input class="form-control" placeholder="E-mail" name="email" type="email" autofocus>
+                                </div>
+                                <div class="form-group">
+                                    <input class="form-control" placeholder="Password" name="password" type="password" value="">
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input name="remember" type="checkbox" value="Remember Me">Remember Me
+                                    </label>
+                                </div>
+                                <!-- Change this to a button or input when using this as a form -->
+                                <a href="index.html" class="btn btn-lg btn-success btn-block">Login</a>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 		<!-- Footer comes here -->
 		
 
