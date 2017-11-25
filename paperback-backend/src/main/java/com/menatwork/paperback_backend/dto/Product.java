@@ -7,6 +7,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
+
+import org.hibernate.validator.constraints.Length;
 
 @Entity
 public class Product {
@@ -17,9 +20,12 @@ public class Product {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
+	@Length(min=3)
 	private String name;
 	private String code;
+	@NotNull
 	private String author;
+	@NotNull
 	private String description;
 	@Column(name = "unit_price")
 	private double unitPrice;

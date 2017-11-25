@@ -2,10 +2,15 @@ package com.menatwork.paperback_frontend.controller;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -16,13 +21,11 @@ import com.menatwork.paperback_backend.dao.ProductDao;
 import com.menatwork.paperback_backend.dto.Catagory;
 import com.menatwork.paperback_backend.dto.Product;
 
-import ch.qos.logback.classic.Logger;
-
 @Controller
 @RequestMapping(value="/push")
-public class PushProductController {
+public class ProductController {
 	 
-	public static final org.slf4j.Logger logger=LoggerFactory.getLogger(PushProductController.class);
+	public static final org.slf4j.Logger logger=LoggerFactory.getLogger(ProductController.class);
 	@Autowired
 	private CatagoryDao catagoryDao;
 	
@@ -49,6 +52,27 @@ public class PushProductController {
 		return mv;
 	}
 	
+	
+	@RequestMapping(value="{id}/edit")
+	public ModelAndView editProduct(@PathVariable("id")int id){
+		
+		ModelAndView mv= new ModelAndView("page");
+		
+		
+		mv.addObject("product", productDao.getBook(id));
+		mv.addObject("title", "edit");
+		mv.addObject("userClickOnPushABook", true);	
+		return mv;
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+	
 	//returning catagory list
 	@ModelAttribute("catagories")
 	public List<Catagory> getCatagoryList(){
@@ -56,11 +80,27 @@ public class PushProductController {
 		return catagoryDao.catagoryList();
 	}
 	
+	
+	
+	
+	
+	
 	@RequestMapping(value = "/product", method=RequestMethod.POST)
-	public String handelPushedBook(@ModelAttribute("product")Product mproduct){
+	public String handelPushedBook(@Valid @ModelAttribute("product")Product mproduct, BindingResult result,Model model   ){
 		logger.info(mproduct.toString());
+		if(result.hasErrors()){
+			model.addAttribute("title", "push");
+			model.addAttribute("error", "please fill valide details");
+            model.addAttribute("userClickOnPushABook", true);
+			return "page";
+		}
+		
+		if(mproduct.getId()==0){
 		boolean status=productDao.addBook(mproduct);
-		System.out.println("status ***********  "+status);
+		}
+		else{
+			productDao.updateBook(mproduct);
+		}
 		return "redirect:/push/book?status=true";
 	}
 	

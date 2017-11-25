@@ -32,6 +32,15 @@ CREATE TABLE product (
 	purchases INT DEFAULT 0,
 	views INT DEFAULT 0,
 	CONSTRAINT pk_product_id PRIMARY KEY (id),
- 	CONSTRAINT fk_product_category_id FOREIGN KEY (catagory_id) REFERENCES category (id),
+ 	CONSTRAINT fk_product_catagory_id FOREIGN KEY (catagory_id) REFERENCES catagory (id),
 	CONSTRAINT fk_product_publisher_id FOREIGN KEY (publisher_id) REFERENCES user_detail(id),	
 );	
+
+CREATE TABLE cart (
+	id int not null auto_increment,
+	user_id int,
+	book_code varchar(255),
+    book_action varchar(30),
+	CONSTRAINT fk_cart_user_id FOREIGN KEY (user_id ) REFERENCES user_detail (id),
+	CONSTRAINT pk_cart_id PRIMARY KEY (id)
+);

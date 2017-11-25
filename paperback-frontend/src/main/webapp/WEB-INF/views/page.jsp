@@ -59,7 +59,7 @@
 		<%@include file="./support/navbar.jsp"%>
 
 		<!-- Page Content -->
-
+<%@include file="./support/slidenav.jsp" %>
 			
 			<!-- Loading the home content -->
 			<c:if test="${userClickHome == true }">

@@ -386,6 +386,9 @@ $(function() {
 		);		
 	}
 		
+	
+	
+	
 	/*------*/
 	/* handle refresh cart*/	
 	$('button[name="refreshCart"]').click(function(){

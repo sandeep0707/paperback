@@ -14,7 +14,7 @@
 			</div>
 		</div>
 	</c:if>
-	 <sf:form  modelAttribute="product"   action="${contextRoot}/push/ " method="POST" >
+	 <sf:form  modelAttribute="product"   action="${contextRoot}/push/product" method="POST" >
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-8">
@@ -29,6 +29,13 @@
                         <div class="panel-heading">
                             Enter your book details
                         </div>
+                        <c:if test="${not empty error}">	
+		<div class="row">			
+			<div class="col-xs-12 col-md-offset-2 col-md-8">			
+				<div class="alert alert-warning fade in">${error}</div>				
+			</div>
+		</div>
+	</c:if>
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-lg-6">
@@ -37,12 +44,17 @@
                                             <label>Title of the book</label>
                                             <sf:input type="text" path="name" class="form-control"
 									placeholder="book title"  />
+								<sf:errors path="name" cssClass="help-block" element="em"/> 
+									
                                            
                                         </div>
                                         <div class="form-group">
                                             <label>Author of the book</label>
                                        <sf:input type="text" path="author" class="form-control"
-									placeholder="Name of the author"  /> </div>
+									placeholder="Name of the author"  />
+								<sf:errors path="author" cssClass="help-block" element="em"/> 
+									
+									 </div>
                                         <div class="form-group">
                                             <label>published by</label>
                                             <p class="form-control-static">xyz</p>
@@ -50,6 +62,8 @@
                                         <div class="form-group">
                                             <label>Text area</label>
                                             <sf:textarea class="form-control" placeholder="say something about the book..."  path="description" rows="3"/>
+                                               <sf:errors path="description" cssClass="help-block" element="em"/> 
+                                            
                                         </div>
                                         <div class="form-group">
                                             <label>choose book cover</label>

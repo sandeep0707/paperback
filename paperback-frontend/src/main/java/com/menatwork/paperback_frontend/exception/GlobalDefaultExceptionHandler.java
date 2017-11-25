@@ -30,7 +30,7 @@ public class GlobalDefaultExceptionHandler {
 	
 	
 	
-	//@ExceptionHandler(Exception.class)
+	@ExceptionHandler(Exception.class)
 	public ModelAndView handlerException(Exception ex) {
 		
 		ModelAndView mv = new ModelAndView("error");

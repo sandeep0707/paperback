@@ -80,7 +80,7 @@ public class PageController {
 	public  ModelAndView viewSelectedProduct(@PathVariable("id") int id){
 		
 		ModelAndView mv=new ModelAndView("page");
-		
+		  System.out.println(id+"*********");
 		//get the books by catagory
 		Product product=null;
 		        product=productDao.getBook(id);
@@ -96,12 +96,7 @@ public class PageController {
 		return mv;
 		
 	}
-	@RequestMapping(value="/login")
-	public ModelAndView login(){
-		ModelAndView mv=new ModelAndView("login");
-		return mv;
-		
-	}
+	
 	
 	
 }
